@@ -10,7 +10,7 @@
 
     <properties>
         <logger.version>1.7.12</logger.version>
-        <identifier>${project.groupId}-${project.artifactId}</identifier>
+        <identifier>${project.groupId}-${project.artifactId}-identifier</identifier>
     </properties>
 
 
