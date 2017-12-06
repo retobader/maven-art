@@ -10,7 +10,7 @@
 
     <properties>
         <logger.version>1.7.12</logger.version>
-        <info>${project.groupId}-${project.artifactId}-info-text</info>
+        <info>${project.groupId}-${pom.property}-info-text</info>
         <jdbc.not>not</jdbc.not>
     </properties>
 
