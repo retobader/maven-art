@@ -31,9 +31,9 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-                <excludes>
-                    <exclude>not*</exclude>
-                </excludes>
+                <includes>
+                    <include>to-*</include>
+                </includes>
             </resource>
             <!--<resource>-->
                 <!--<directory>src/main/resources</directory>-->
