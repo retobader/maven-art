@@ -1,3 +1,0 @@
-<xml>
-    <property name="not-filter" value="${jdbc.not}"/>
-</xml>

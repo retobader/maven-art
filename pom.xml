@@ -5,13 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.art.examples.maven</groupId>
-    <artifactId>filter</artifactId>
+    <artifactId>multi-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <logger.version>1.7.12</logger.version>
-        <info>${project.groupId}-${pom.property}-info-text</info>
-        <jdbc.not>not</jdbc.not>
     </properties>
 
 
@@ -23,22 +22,9 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <filters>
-            <filter>src/main/filters/default.properties</filter>
-        </filters>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <excludes>
-                    <exclude>not*</exclude>
-                </excludes>
-            </resource>
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<filtering>false</filtering>-->
-            <!--</resource>-->
-        </resources>
-    </build>
+    <modules>
+        <module>model</module>
+        <module>data</module>
+        <module>complex-stuff-parent</module>
+    </modules>
 </project>
