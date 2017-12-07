@@ -1,5 +1,6 @@
 package de.art.maven.examples.properties;
 
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +12,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        BasicConfigurator.configure();
         LOG.warn("Hello World!!!");
     }
 }
