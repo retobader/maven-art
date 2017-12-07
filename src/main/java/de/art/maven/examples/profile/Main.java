@@ -1,4 +1,4 @@
-package de.art.maven.examples.filter;
+package de.art.maven.examples.profile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
