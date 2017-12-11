@@ -1,4 +1,4 @@
-package de.art.maven.examples.conflict.lib;
+package de.art.maven.examples.conflict.transitive;
 
 public class ConflictedLib {
     public void doStuff(String param1) {

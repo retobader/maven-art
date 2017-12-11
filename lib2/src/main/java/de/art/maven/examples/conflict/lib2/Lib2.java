@@ -1,6 +1,6 @@
 package de.art.maven.examples.conflict.lib2;
 
-import de.art.maven.examples.conflict.lib.ConflictedLib;
+import de.art.maven.examples.conflict.transitive.ConflictedLib;
 
 public class Lib2 {
     public void doAlsoImportantStuff() {

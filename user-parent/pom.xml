@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>user-parent</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>conflict-solver</module>
