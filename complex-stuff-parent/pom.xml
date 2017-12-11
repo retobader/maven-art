@@ -18,14 +18,4 @@
         <module>complex-stuff-1</module>
         <module>complex-stuff-2</module>
     </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>model</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
-
-
 </project>
