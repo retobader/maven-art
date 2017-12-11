@@ -27,7 +27,7 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.1.0</version>
                     <configuration>
-                        !-- get all project dependencies -->
+                        <!-- get all project dependencies -->
                         <descriptorRefs>
                             <descriptorRef>jar-with-dependencies</descriptorRef>
                         </descriptorRefs>
