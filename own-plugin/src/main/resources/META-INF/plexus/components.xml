@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<component-set>
+    <components>
+        <component>
+            <role>org.apache.maven.lifecycle.Lifecycle</role>
+            <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
+            <role-hint>sayhiautoexecute</role-hint>
+            <configuration>
+                <id>sayhiautoexecute</id>
+                <phases>
+                    <phase>not-used-phase</phase>
+                </phases>
+                <default-phases>
+                    <compile>
+                        de.art.examples.maven:own-plugin:${project.version}:sayhiauto
+                    </compile>
+                    <package>
+                        de.art.examples.maven:own-plugin:${project.version}:sayhiauto
+                    </package>
+                </default-phases>
+            </configuration>
+        </component>
+    </components>
+</component-set>
