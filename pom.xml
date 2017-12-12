@@ -8,9 +8,4 @@
     <artifactId>to-be-ignored-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <modules>
-        <module>own-plugin</module>
-        <module>plugin-user</module>
-    </modules>
 </project>

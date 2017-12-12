@@ -7,12 +7,27 @@
 
     <groupId>de.art.examples.maven</groupId>
     <artifactId>plugin-user</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+        <logger.version>1.7.12</logger.version>
+        <fluent-hc.version>4.5.4</fluent-hc.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${logger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>${fluent-hc.version}</version>
+        </dependency>
+    </dependencies>
 
 
     <build>
@@ -22,10 +37,59 @@
                 <artifactId>own-maven-plugin</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <greeting>test123</greeting>
+                    <ownMap>
+                        <key1>1</key1>
+                        <keyOther>2</keyOther>
+                    </ownMap>
+                </configuration>
                 <executions>
                     <execution>
+                        <id>simple</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>sayhi</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>phase</id>
                         <goals>
                             <goal>sayhiphase</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>phase-forced</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sayhiphase</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>parameter</id>
+                        <goals>
+                            <goal>parameter</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>parameter-overwritten</id>
+                        <configuration>
+                            <greeting>overwritte</greeting>
+                        </configuration>
+                        <goals>
+                            <goal>parameter</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>map</id>
+                        <goals>
+                            <goal>map</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>executor</id>
+                        <goals>
+                            <goal>executor</goal>
                         </goals>
                     </execution>
                 </executions>

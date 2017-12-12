@@ -13,6 +13,6 @@ public class OwnPluginAuto extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().info("Hello world auto executed");
+        getLog().warn("Hello world auto executed");
     }
 }

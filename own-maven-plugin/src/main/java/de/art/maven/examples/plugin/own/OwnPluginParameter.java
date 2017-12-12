@@ -4,15 +4,18 @@ package de.art.maven.examples.plugin.own;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.apache.maven.plugins.annotations.Execute;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "sayhiphase", defaultPhase = LifecyclePhase.PACKAGE)
-public class OwnPluginBoundToPhase extends AbstractMojo {
+@Mojo(name = "parameter", defaultPhase = LifecyclePhase.COMPILE)
+public class OwnPluginParameter extends AbstractMojo {
+
+    @Parameter(alias = "greeting", defaultValue = "default")
+    private String text;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().info("Hello world @ phase package");
+        getLog().warn("Hello world: " + text);
     }
 }
