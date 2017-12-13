@@ -16,10 +16,10 @@ import static org.twdata.maven.mojoexecutor.MojoExecutor.*;
 
 @Mojo(name = "executor", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
 public class MojoExecutor extends AbstractMojo {
-    @Parameter(defaultValue = "${project}", required = true, readonly = true)
+    @Component
     private MavenProject mavenProject;
 
-    @Parameter(defaultValue = "${session}", required = true, readonly = true)
+    @Component
     private MavenSession mavenSession;
 
     @Component
