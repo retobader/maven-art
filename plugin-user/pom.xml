@@ -48,7 +48,7 @@
                 <executions>
                     <execution>
                         <id>simple</id>
-                        <phase>package</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>sayhi</goal>
                         </goals>
@@ -59,6 +59,7 @@
                             <goal>sayhiphase</goal>
                             <goal>parameter</goal>
                             <goal>map</goal>
+                            <goal>properties</goal>
                             <goal>executor</goal>
                         </goals>
                     </execution>

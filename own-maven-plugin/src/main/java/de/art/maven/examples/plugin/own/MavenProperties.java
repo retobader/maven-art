@@ -15,6 +15,6 @@ public class MavenProperties extends AbstractMojo {
     private String version;
 
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().warn("properties: " + version);
+        getLog().warn("Hello properties: " + version);
     }
 }

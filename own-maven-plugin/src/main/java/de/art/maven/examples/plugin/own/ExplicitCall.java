@@ -11,6 +11,6 @@ public class ExplicitCall extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().warn("Hello world.");
+        getLog().warn("Hello world simple");
     }
 }
