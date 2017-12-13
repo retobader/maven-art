@@ -10,22 +10,23 @@
     <version>1.0.1-SNAPSHOT</version>
 
     <properties>
+        <fluent-hc.version>4.5.4</fluent-hc.version>
+        <logger.version>1.7.12</logger.version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <logger.version>1.7.12</logger.version>
-        <fluent-hc.version>4.5.4</fluent-hc.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${logger.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>fluent-hc</artifactId>
             <version>${fluent-hc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${logger.version}</version>
         </dependency>
     </dependencies>
 
@@ -53,9 +54,12 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>phase</id>
+                        <id>default-execution</id>
                         <goals>
                             <goal>sayhiphase</goal>
+                            <goal>parameter</goal>
+                            <goal>map</goal>
+                            <goal>executor</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -66,30 +70,12 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>parameter</id>
-                        <goals>
-                            <goal>parameter</goal>
-                        </goals>
-                    </execution>
-                    <execution>
                         <id>parameter-overwritten</id>
                         <configuration>
                             <greeting>overwritte</greeting>
                         </configuration>
                         <goals>
                             <goal>parameter</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>map</id>
-                        <goals>
-                            <goal>map</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>executor</id>
-                        <goals>
-                            <goal>executor</goal>
                         </goals>
                     </execution>
                 </executions>

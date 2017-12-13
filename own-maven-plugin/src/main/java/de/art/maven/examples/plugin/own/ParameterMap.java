@@ -8,14 +8,20 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "parameter", defaultPhase = LifecyclePhase.COMPILE)
-public class OwnPluginParameter extends AbstractMojo {
+import java.util.Map;
 
-    @Parameter(alias = "greeting", defaultValue = "default")
-    private String text;
+@Mojo(name = "map", defaultPhase = LifecyclePhase.COMPILE)
+public class ParameterMap extends AbstractMojo {
+
+    @Parameter
+    private Map<String, Integer> ownMap;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().warn("Hello world: " + text);
+
+        for (Map.Entry<String, Integer> entry : ownMap.entrySet()) {
+
+            getLog().warn("Hello Entry: " + entry.getKey() + " value: " + entry.getValue());
+        }
     }
 }

@@ -26,7 +26,7 @@ public class MojoExecutor extends AbstractMojo {
     private BuildPluginManager pluginManager;
 
     public void execute() throws MojoExecutionException, MojoFailureException {
-        getLog().warn("executor " + mavenProject.getArtifactId());
+        getLog().warn("Hello executor " + mavenProject.getArtifactId());
         ExecutionEnvironment environment = executionEnvironment(mavenProject, mavenSession, pluginManager);
 
         executeJar(environment);
