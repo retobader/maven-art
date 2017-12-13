@@ -35,24 +35,24 @@
                         <id>simple</id>
                         <phase>compile</phase>
                         <goals>
-                            <goal>sayhi</goal>
+                            <goal>explicit_call</goal>
                         </goals>
                     </execution>
                     <execution>
                         <id>default-execution</id>
                         <goals>
-                            <goal>sayhiphase</goal>
-                            <goal>parameter</goal>
-                            <goal>map</goal>
-                            <goal>properties</goal>
-                            <goal>executor</goal>
+                            <goal>bound_to_phase</goal>
+                            <goal>set_parameter</goal>
+                            <goal>parameter_map</goal>
+                            <goal>maven_properties</goal>
+                            <goal>mojo_executor</goal>
                         </goals>
                     </execution>
                     <execution>
                         <id>phase-forced</id>
                         <phase>install</phase>
                         <goals>
-                            <goal>sayhiphase</goal>
+                            <goal>bound_to_phase</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -61,7 +61,7 @@
                             <greeting>overwritte</greeting>
                         </configuration>
                         <goals>
-                            <goal>parameter</goal>
+                            <goal>set_parameter</goal>
                         </goals>
                     </execution>
                 </executions>

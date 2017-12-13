@@ -8,7 +8,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "properties", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "maven_properties", defaultPhase = LifecyclePhase.COMPILE)
 public class MavenProperties extends AbstractMojo {
 
     @Parameter(property = "project.version", readonly = true, required = true)

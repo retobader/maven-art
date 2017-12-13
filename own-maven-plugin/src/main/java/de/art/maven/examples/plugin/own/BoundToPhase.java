@@ -8,7 +8,7 @@ import org.apache.maven.plugins.annotations.Execute;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 
-@Mojo(name = "sayhiphase", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "bound_to_phase", defaultPhase = LifecyclePhase.COMPILE)
 public class BoundToPhase extends AbstractMojo {
 
     @Override

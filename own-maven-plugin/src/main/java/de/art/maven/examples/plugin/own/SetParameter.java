@@ -8,7 +8,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "parameter", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "set_parameter", defaultPhase = LifecyclePhase.COMPILE)
 public class SetParameter extends AbstractMojo {
 
     @Parameter(alias = "greeting", defaultValue = "default")

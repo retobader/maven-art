@@ -14,7 +14,7 @@ import org.apache.maven.project.MavenProject;
 
 import static org.twdata.maven.mojoexecutor.MojoExecutor.*;
 
-@Mojo(name = "executor", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
+@Mojo(name = "mojo_executor", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
 public class MojoExecutor extends AbstractMojo {
     @Component
     private MavenProject mavenProject;

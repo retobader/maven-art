@@ -8,7 +8,7 @@ import org.apache.maven.plugins.annotations.Execute;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 
-@Mojo(name = "sayhiauto")
+@Mojo(name = "auto_execute")
 public class AutoExecute extends AbstractMojo {
 
     @Override

@@ -12,10 +12,10 @@
                 </phases>
                 <default-phases>
                     <compile>
-                        de.art.examples.maven:own-maven-plugin:${project.version}:sayhiauto
+                        de.art.examples.maven:own-maven-plugin:${project.version}:auto_execute
                     </compile>
                     <package>
-                        de.art.examples.maven:own-maven-plugin:${project.version}:sayhiauto
+                        de.art.examples.maven:own-maven-plugin:${project.version}:auto_execute
                     </package>
                 </default-phases>
             </configuration>

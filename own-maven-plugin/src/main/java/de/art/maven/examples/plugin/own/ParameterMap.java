@@ -10,7 +10,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 import java.util.Map;
 
-@Mojo(name = "map", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "parameter_map", defaultPhase = LifecyclePhase.COMPILE)
 public class ParameterMap extends AbstractMojo {
 
     @Parameter
