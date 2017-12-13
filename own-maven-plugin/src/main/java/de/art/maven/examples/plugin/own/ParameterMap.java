@@ -14,14 +14,14 @@ import java.util.Map;
 public class ParameterMap extends AbstractMojo {
 
     @Parameter
-    private Map<String, Integer> ownMap;
+    private Map<String, Integer> pluginMap;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
 
-        for (Map.Entry<String, Integer> entry : ownMap.entrySet()) {
+        for (Map.Entry<String, Integer> entry : pluginMap.entrySet()) {
 
-            getLog().warn("Hello Entry: " + entry.getKey() + " value: " + entry.getValue());
+            getLog().warn("Hello entry: " + entry.getKey() + " value: " + entry.getValue());
         }
     }
 }
