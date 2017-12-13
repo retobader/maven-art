@@ -4,9 +4,9 @@
         <component>
             <role>org.apache.maven.lifecycle.Lifecycle</role>
             <implementation>org.apache.maven.lifecycle.Lifecycle</implementation>
-            <role-hint>sayhiautoexecute</role-hint>
+            <role-hint>auto-execute</role-hint>
             <configuration>
-                <id>sayhiautoexecute</id>
+                <id>auto-execute</id>
                 <phases>
                     <phase>not-used-phase</phase>
                 </phases>
