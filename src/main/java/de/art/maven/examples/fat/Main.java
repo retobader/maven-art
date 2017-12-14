@@ -19,8 +19,8 @@ public class Main {
         LOG.warn("Hello World!!!");
         try {
             String content = Request.Get("https://www.google.de/search?q=Hello+World")
-                    .connectTimeout(1000)
-                    .socketTimeout(1000)
+                    .connectTimeout(10000)
+                    .socketTimeout(10000)
                     .execute().returnContent().asString();
             LOG.debug("Request content:\n" + content);
         } catch (IOException e) {
