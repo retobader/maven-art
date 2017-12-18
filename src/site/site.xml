@@ -14,13 +14,6 @@
         <artifactId>maven-stylus-skin</artifactId>
         <version>1.5</version>
     </skin>
-    <custom>
-        <fluidoSkin>
-            <sideBarEnabled>true</sideBarEnabled>
-            <googlePlusOne/>
-        </fluidoSkin>
-    </custom>
-
 
     <body>
         <menu name="Regular Web Site">
