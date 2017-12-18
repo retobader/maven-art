@@ -24,6 +24,7 @@
         <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
         <maven.jxr.plugin>2.5</maven.jxr.plugin>
         <maven.project.info.reports.plugin>2.9</maven.project.info.reports.plugin>
+        <maven.site.plugin>3.6</maven.site.plugin>
         <maven.surefirereport.plugin>2.20.1</maven.surefirereport.plugin>
         <maven.taglist.plugin>2.4</maven.taglist.plugin>
         <maven.versions.plugin>2.5</maven.versions.plugin>
@@ -83,6 +84,14 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin}</version>
+            </plugin>
+        </plugins>
     </build>
 
     <reporting>
