@@ -9,8 +9,8 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <scm>
-        <developerConnection>scm:git:ssh://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
-        <connection>scm:git:ssh://alexander-redmann-teaching/maven-art.git</connection>
+        <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
+        <connection>scm:git:https://alexander-redmann-teaching/maven-art.git</connection>
         <url>https://github.com/alexander-redmann-teaching/maven-art/tree/14-deployment-local</url>
     </scm>
 
