@@ -5,8 +5,29 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.art.examples.maven</groupId>
-    <artifactId>reporting</artifactId>
+    <artifactId>deployment-local</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
+    <scm>
+        <developerConnection>scm:git:ssh://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
+        <connection>scm:git:ssh://alexander-redmann-teaching/maven-art.git</connection>
+        <url>https://github.com/alexander-redmann-teaching/maven-art/tree/14-deployment-local</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>repo-releases</id>
+            <url>file://~/.m2/virtual-distribution/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>repo-snapshots</id>
+            <url>file://~/.m2/virtual-distribution/snapshots/</url>
+        </snapshotRepository>
+        <site>
+            <id>repo-site</id>
+            <url>file://~/.m2/virtual-distribution/site/</url>
+        </site>
+    </distributionManagement>
 
 
     <properties>
@@ -22,13 +43,53 @@
         <maven.findbugs.plugin>3.0.5</maven.findbugs.plugin>
         <maven.javadoc.plugin>2.10.4</maven.javadoc.plugin>
         <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
+        <maven.jgit.plugin>1.9.5</maven.jgit.plugin>
         <maven.jxr.plugin>2.5</maven.jxr.plugin>
         <maven.project.info.reports.plugin>2.9</maven.project.info.reports.plugin>
+        <maven.release.plugin>2.5.3</maven.release.plugin>
         <maven.site.plugin>3.6</maven.site.plugin>
         <maven.surefirereport.plugin>2.20.1</maven.surefirereport.plugin>
         <maven.taglist.plugin>2.4</maven.taglist.plugin>
         <maven.versions.plugin>2.5</maven.versions.plugin>
     </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven.release.plugin}</version>
+                <configuration>
+                    <tagNameFormat>
+                        @{project.groupId}-@{project.artifactId}-@{project.version}
+                    </tagNameFormat>
+                    <providerImplementations>
+                        <git>jgit</git>
+                    </providerImplementations>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>${maven.jgit.plugin}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin}</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -76,23 +137,6 @@
             </build>
         </profile>
     </profiles>
-
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>${maven.site.plugin}</version>
-            </plugin>
-        </plugins>
-    </build>
 
     <reporting>
         <plugins>
