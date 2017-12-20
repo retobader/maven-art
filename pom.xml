@@ -15,15 +15,15 @@
     <distributionManagement>
         <repository>
             <id>art-releases</id>
-            <url>http://localhost:8081/repository/maven-releases/</url>
+            <url>http://nexus3:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>art-snapshots</id>
-            <url>http://localhost:8081/repository/maven-snapshots/</url>
+            <url>http://nexus3:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <site>
             <id>art-site</id>
-            <url>dav:http://localhost:8081/repository/site/</url>
+            <url>dav:http://nexus3:8081/repository/site/</url>
         </site>
     </distributionManagement>
 
