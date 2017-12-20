@@ -24,7 +24,7 @@
         </snapshotRepository>
         <site>
             <id>art-site</id>
-            <url>dav:http://nexus3:8081/repository/site/</url>
+            <url>dav:http://nexus3:8081/repository/site/${groupId}/${artifactId}</url>
         </site>
     </distributionManagement>
 
