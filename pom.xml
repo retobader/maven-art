@@ -17,15 +17,15 @@
     <distributionManagement>
         <repository>
             <id>repo-releases</id>
-            <url>file://~/.m2/virtual-distribution/releases/</url>
+            <url>file:///home/redmann/.m2/virtual-distribution/releases/</url>
         </repository>
         <snapshotRepository>
             <id>repo-snapshots</id>
-            <url>file://~/.m2/virtual-distribution/snapshots/</url>
+            <url>file:///home/redmann/.m2/virtual-distribution/snapshots/</url>
         </snapshotRepository>
         <site>
             <id>repo-site</id>
-            <url>file://~/.m2/virtual-distribution/site/</url>
+            <url>file:///home/redmann/.m2/virtual-distribution/site/</url>
         </site>
     </distributionManagement>
 
