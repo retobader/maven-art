@@ -3,28 +3,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.art.examples.maven</groupId>
-    <artifactId>deployment-local</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <artifactId>deployment-remote</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
         <connection>scm:git:https://alexander-redmann-teaching/maven-art.git</connection>
-        <url>https://github.com/alexander-redmann-teaching/maven-art/tree/14-deployment-local</url>
-      <tag>HEAD</tag>
-  </scm>
+        <url>https://github.com/alexander-redmann-teaching/maven-art/tree/15-deployment-remote</url>
+    </scm>
 
     <distributionManagement>
         <repository>
             <id>repo-releases</id>
-            <url>file:///home/redmann/.m2/virtual-distribution/releases/</url>
+            <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>repo-snapshots</id>
-            <url>file:///home/redmann/.m2/virtual-distribution/snapshots/</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <site>
             <id>repo-site</id>
-            <url>file:///home/redmann/.m2/virtual-distribution/site/</url>
+            <url>dav:http://localhost:8081/repository/site/</url>
         </site>
     </distributionManagement>
 
@@ -87,6 +86,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>${maven.site.plugin}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-webdav-jackrabbit</artifactId>
+                        <version>3.0.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
