@@ -4,14 +4,13 @@
 
     <groupId>de.art.examples.maven</groupId>
     <artifactId>deployment-remote</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
         <connection>scm:git:https://alexander-redmann-teaching/maven-art.git</connection>
         <url>https://github.com/alexander-redmann-teaching/maven-art/tree/15-deployment-remote</url>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
 
     <distributionManagement>
         <repository>
