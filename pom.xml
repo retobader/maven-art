@@ -24,7 +24,7 @@
         </snapshotRepository>
         <site>
             <id>repo-site</id>
-            <url>file:///home/redmann/.m2/virtual-distribution/site/${groupId}/${artifactId}</url>
+            <url>file:///home/redmann/.m2/virtual-distribution/site/${project.groupId}/${project.artifactId}</url>
         </site>
     </distributionManagement>
 
