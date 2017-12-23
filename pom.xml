@@ -4,12 +4,13 @@
 
     <groupId>de.art.examples.maven</groupId>
     <artifactId>deployment-local</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
         <connection>scm:git:https://alexander-redmann-teaching/maven-art.git</connection>
         <url>https://github.com/alexander-redmann-teaching/maven-art/tree/14-deployment-local</url>
+    <tag>de.art.examples.maven-deployment-local-1.0.0</tag>
   </scm>
 
     <distributionManagement>
