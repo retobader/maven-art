@@ -10,7 +10,6 @@
         <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
         <connection>scm:git:https://alexander-redmann-teaching/maven-art.git</connection>
         <url>https://github.com/alexander-redmann-teaching/maven-art/tree/14-deployment-local</url>
-      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
