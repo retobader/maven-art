@@ -1,25 +1,6 @@
 apply plugin: 'java'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
 //create a single Jar with all dependencies
-
-jar {
-    manifest {
-        attributes 'Main-Class': 'de.art.maven.examples.fat.Main'
-    }
-}
-
-task fatJar(type: Jar) {
-
-    manifest {
-        attributes 'Main-Class': 'de.art.maven.examples.fat.Main'
-    }
-    baseName = 'fatjar'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
-}
 
 //Get dependencies from Maven central repository
 repositories {
@@ -30,4 +11,16 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-log4j12:1.7.12'
     compile 'org.apache.httpcomponents:fluent-hc:4.5.4'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.art.maven.examples.fat.Main'
+    }
+}
+
+task fatJar(type: Jar) {
+    baseName = 'fatjar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }

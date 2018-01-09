@@ -12,18 +12,23 @@
 	<property name="main-class" value="de.art.maven.examples.fat.Main" />
  
 	<!-- ivy start -->
+    <!-- install ivy -->
+    <target name="ivy" description="Install ivy">
+        <mkdir dir="${user.home}/.ant/lib" />
+        <get dest="${user.home}/.ant/lib/ivy.jar"
+             src="http://search.maven.org/remotecontent?filepath=org/apache/ivy/ivy/2.4.0-rc1/ivy-2.4.0-rc1.jar" />
+    </target>
+
 	<!-- ivy to get dependencies and copy to project lib folder automatically -->
 	<target name="resolve" description="retrieve dependencies with ivy">
 		<ivy:retrieve />
 	</target>
- 
-	<!-- install ivy -->
-	<target name="ivy" description="Install ivy">
-		<mkdir dir="${user.home}/.ant/lib" />
-		<get dest="${user.home}/.ant/lib/ivy.jar" 
-                    src="http://search.maven.org/remotecontent?filepath=org/apache/ivy/ivy/2.4.0-rc1/ivy-2.4.0-rc1.jar" />
-	</target>
 	<!-- ivy end -->
+
+    <target name="clean" description="clean up">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+    </target>
  
 	<target name="init">
 		<mkdir dir="${build.dir}" />
@@ -73,11 +78,6 @@
                                 excludes="META-INF/*.SF" />
 		</jar>
  
-	</target>
- 
-	<target name="clean" description="clean up">
-		<delete dir="${build.dir}" />
-		<delete dir="${dist.dir}" />
 	</target>
  
 	<!-- Default, run this -->
