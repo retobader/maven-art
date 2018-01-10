@@ -5,58 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.art.examples.maven</groupId>
-    <artifactId>fat-jar</artifactId>
+    <artifactId>c-compiler-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <properties>
-        <logger.version>1.7.12</logger.version>
-        <fluent-hc.version>4.5.4</fluent-hc.version>
-    </properties>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${logger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>fluent-hc</artifactId>
-            <version>${fluent-hc.version}</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>fatjar</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <!-- get all project dependencies -->
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <!-- MainClass in mainfest make a executable jar -->
-                    <archive>
-                        <manifest>
-                            <mainClass>de.art.maven.examples.fat.Main</mainClass>
-                        </manifest>
-                    </archive>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <!-- bind to the packaging phase -->
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>test-library</module>
+        <module>test-app</module>
+    </modules>
 </project>
