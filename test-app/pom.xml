@@ -19,10 +19,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.awakening.mvn-test</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>test-library</artifactId>
+            <version>${project.version}</version>
             <type>nar</type>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
