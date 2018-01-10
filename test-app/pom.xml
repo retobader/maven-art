@@ -45,6 +45,7 @@
                 </configuration>
             </plugin>
 
+            <!-- extract nar package to execute file -->
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
