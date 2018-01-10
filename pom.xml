@@ -5,13 +5,47 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.art.examples.maven</groupId>
-    <artifactId>c-compiler-parent</artifactId>
+    <artifactId>android-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>apk</packaging>
 
-    <packaging>pom</packaging>
+    <name>HelloFlashLight</name>
+    <properties>
+        <it-plugin.version>4.3.0</it-plugin.version>
+    </properties>
 
-    <modules>
-        <module>test-library</module>
-        <module>test-app</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.1.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.simpligility.maven.plugins</groupId>
+
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>4.5.0</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.simpligility.maven.plugins</groupId>
+
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <platform>19</platform>
+                    </sdk>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
