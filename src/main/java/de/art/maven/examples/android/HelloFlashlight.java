@@ -1,4 +1,4 @@
-package de.xplace.examples;
+package de.art.maven.examples.android;
 
 import android.app.Activity;
 import android.graphics.Color;
