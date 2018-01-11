@@ -11,7 +11,7 @@
 
     <name>HelloFlashLight</name>
     <properties>
-        <it-plugin.version>4.3.0</it-plugin.version>
+        <android.sdk.path>/opt/android</android.sdk.path>
     </properties>
 
     <dependencies>
@@ -24,6 +24,7 @@
     </dependencies>
 
     <build>
+        <finalName>HelloFlashLight</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -42,7 +43,7 @@
                 <artifactId>android-maven-plugin</artifactId>
                 <configuration>
                     <sdk>
-                        <platform>19</platform>
+                        <platform>27</platform>
                     </sdk>
                 </configuration>
             </plugin>
