@@ -1,4 +1,4 @@
-package de.art.maven.examples.site;
+package de.art.maven.examples.multi;
 
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        //TODO: nothing to do
         LOG.warn("Hello World!!!");
+        new Function().call();
     }
 }
