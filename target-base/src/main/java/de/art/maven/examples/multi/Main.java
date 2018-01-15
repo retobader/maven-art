@@ -15,5 +15,6 @@ public class Main {
         BasicConfigurator.configure();
         LOG.warn("Hello World!!!");
         new Function().call();
+        LOG.info(new Configuration().getConfig());
     }
 }
