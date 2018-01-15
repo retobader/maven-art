@@ -16,16 +16,16 @@
 
     <distributionManagement>
         <repository>
-            <id>art-releases</id>
-            <url>http://nexus3:8081/repository/maven-releases/</url>
+            <id>repo-releases</id>
+            <url>file:///home/redmann/.m2/virtual-distribution/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>art-snapshots</id>
-            <url>http://nexus3:8081/repository/maven-snapshots/</url>
+            <id>repo-snapshots</id>
+            <url>file:///home/redmann/.m2/virtual-distribution/snapshots/</url>
         </snapshotRepository>
         <site>
-            <id>art-site</id>
-            <url>dav:http://nexus3:8081/repository/site/${groupId}/${artifactId}</url>
+            <id>repo-site</id>
+            <url>file:///home/redmann/.m2/virtual-distribution/site/${project.groupId}/${project.artifactId}</url>
         </site>
     </distributionManagement>
 
@@ -69,12 +69,12 @@
                 <version>1.0-m5.1</version>
                 <configuration>
                     <flowInitContext>
-                        <masterBranchName>frankenstein</masterBranchName>
-                        <developBranchName>development</developBranchName>
-                        <featureBranchPrefix>feature-</featureBranchPrefix>
-                        <releaseBranchPrefix>release-</releaseBranchPrefix>
-                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                        <versionTagPrefix>blither-</versionTagPrefix>
+                        <masterBranchName>c-06-git-flow-release</masterBranchName>
+                        <developBranchName>c-06-git-flow-release-develop</developBranchName>
+                        <featureBranchPrefix>c-06-git-flow-release-feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>c-06-git-flow-release-release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>c-06-git-flow-release-hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
                     </flowInitContext>
                 </configuration>
             </plugin>
@@ -82,13 +82,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>${maven.site.plugin}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.wagon</groupId>
-                        <artifactId>wagon-webdav-jackrabbit</artifactId>
-                        <version>3.0.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -111,131 +104,4 @@
             <version>${fluent-hc.version}</version>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <mode>dev</mode>
-            </properties>
-            <build>
-                <filters>
-                    <filter>src/main/filters/dev.properties</filter>
-                </filters>
-            </build>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <mode>prod</mode>
-            </properties>
-            <build>
-                <filters>
-                    <filter>src/main/filters/prod.properties</filter>
-                </filters>
-            </build>
-        </profile>
-    </profiles>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>${maven.surefirereport.plugin}</version>
-                <configuration>
-                    <outputName>surefire-report</outputName>
-                    <showSuccess>true</showSuccess>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven.javadoc.plugin}</version>
-                <configuration>
-                    <failOnError>false</failOnError>
-                    <aggregate>true</aggregate>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven.checkstyle.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${maven.project.info.reports.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${maven.findbugs.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jdepend-maven-plugin</artifactId>
-                <version>${maven.jdepend.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>${maven.jxr.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>${maven.versions.plugin}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>taglist-maven-plugin</artifactId>
-                <version>${maven.taglist.plugin}</version>
-                <configuration>
-                    <tagListOptions>
-                        <tagClasses>
-                            <tagClass>
-                                <displayName>FIXME Work</displayName>
-                                <tags>
-                                    <tag>
-                                        <matchString>fixme</matchString>
-                                        <matchType>ignoreCase</matchType>
-                                    </tag>
-                                    <tag>
-                                        <matchString>@fixme</matchString>
-                                        <matchType>ignoreCase</matchType>
-                                    </tag>
-                                </tags>
-                            </tagClass>
-                            <tagClass>
-                                <displayName>Todo Work</displayName>
-                                <tags>
-                                    <tag>
-                                        <matchString>todo</matchString>
-                                        <matchType>ignoreCase</matchType>
-                                    </tag>
-                                    <tag>
-                                        <matchString>@todo</matchString>
-                                        <matchType>ignoreCase</matchType>
-                                    </tag>
-                                </tags>
-                            </tagClass>
-                            <tagClass>
-                                <displayName>Deprecated Work</displayName>
-                                <tags>
-                                    <tag>
-                                        <matchString>@deprecated</matchString>
-                                        <matchType>ignoreCase</matchType>
-                                    </tag>
-                                </tags>
-                            </tagClass>
-                        </tagClasses>
-                    </tagListOptions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>

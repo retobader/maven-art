@@ -1,4 +1,4 @@
-package de.art.maven.examples.site;
+package de.art.maven.examples.gitflow;
 
 import org.junit.Assert;
 import org.junit.Test;
