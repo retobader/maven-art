@@ -40,18 +40,8 @@
         <fluent-hc.version>4.5.4</fluent-hc.version>
         <junit.version>4.8.1</junit.version>
 
-        <maven.checkstyle.plugin>2.17</maven.checkstyle.plugin>
-        <maven.findbugs.plugin>3.0.5</maven.findbugs.plugin>
-        <maven.javadoc.plugin>2.10.4</maven.javadoc.plugin>
-        <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
-        <maven.jgit.plugin>1.9.5</maven.jgit.plugin>
-        <maven.jxr.plugin>2.5</maven.jxr.plugin>
-        <maven.project.info.reports.plugin>2.9</maven.project.info.reports.plugin>
-        <maven.release.plugin>2.5.3</maven.release.plugin>
+        <maven.jgitflow.plugin>1.0-m5.1</maven.jgitflow.plugin>
         <maven.site.plugin>3.6</maven.site.plugin>
-        <maven.surefirereport.plugin>2.20.1</maven.surefirereport.plugin>
-        <maven.taglist.plugin>2.4</maven.taglist.plugin>
-        <maven.versions.plugin>2.5</maven.versions.plugin>
     </properties>
 
     <build>
@@ -66,11 +56,11 @@
             <plugin>
                 <groupId>external.atlassian.jgitflow</groupId>
                 <artifactId>jgitflow-maven-plugin</artifactId>
-                <version>1.0-m5.1</version>
+                <version>${maven.jgitflow.plugin}</version>
                 <configuration>
                     <flowInitContext>
-                        <masterBranchName>c-06-git-flow-release</masterBranchName>
-                        <developBranchName>c-06-git-flow-release-develop</developBranchName>
+                        <masterBranchName>c-06-git-flow-release-master</masterBranchName>
+                        <developBranchName>c-06-git-flow-release</developBranchName>
                         <featureBranchPrefix>c-06-git-flow-release-feature-</featureBranchPrefix>
                         <releaseBranchPrefix>c-06-git-flow-release-release-</releaseBranchPrefix>
                         <hotfixBranchPrefix>c-06-git-flow-release-hotfix-</hotfixBranchPrefix>
