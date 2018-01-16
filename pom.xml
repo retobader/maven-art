@@ -57,6 +57,7 @@
                 <artifactId>jgitflow-maven-plugin</artifactId>
                 <version>${maven.jgitflow.plugin}</version>
                 <configuration>
+                    <pushReleases>true</pushReleases>
                     <flowInitContext>
                         <masterBranchName>c-06-git-flow-release-master</masterBranchName>
                         <developBranchName>c-06-git-flow-release</developBranchName>
