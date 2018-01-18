@@ -4,7 +4,7 @@
 
     <groupId>de.art.examples.maven</groupId>
     <artifactId>deployment-remote</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:https://github.com/alexander-redmann-teaching/maven-art.git</developerConnection>
