@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
         BasicConfigurator.configure();
         LOG.warn("Hello World!!!");
+        /*
         try {
             String content = Request.Get("https://www.google.de/search?q=Hello+World")
                     .connectTimeout(10000)
@@ -26,5 +27,6 @@ public class Main {
         } catch (IOException e) {
             LOG.warn("Couldn't get data", e);
         }
+        */
     }
 }

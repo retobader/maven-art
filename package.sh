@@ -1,0 +1,17 @@
+  jpackage \
+  --input target \
+  --name fatjar \
+  --main-jar fatjar.jar \
+  --main-class de.art.maven.examples.fat.Main \
+  --description "Maven-Art Example Deployment" \
+  --vendor "RBR" \
+  --copyright "RBR" \
+  --dest install/output \
+  --app-version 1.0 \
+  --icon install/assets/icon.ico \
+  --resource-dir install/windows/resources \
+  --win-shortcut \
+  --win-dir-chooser \
+  --win-menu --win-menu-group "Maven-Art Example Deployment" \
+  --type msi \
+  --win-console
